@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – Chaldean Syrian HSS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- ══ TOPBAR ══════════════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span><i class="fa fa-map-marker-alt"></i> Thrissur, Kerala, India</span>
+      <span><i class="fa fa-phone"></i> +91 9447617867</span>
+      <span><i class="fa fa-envelope"></i> info@chaldeansyrianhss.edu.in</span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+<header class="navbar" id="navbar">
+    <div class="navbar__logo">
+      <!-- Replace the SVG crest below with your actual logo image:
+           <img src="images/logo.png" alt="School Logo" /> -->
+      <div class="logo-crest">
+        <img src="images/logo.png" alt="School Logo" />
+      </div>
+      <div class="logo-text">
+        <span class="logo-text__main">Chaldean Syrian HSS</span>
+        <span class="logo-text__sub"> Thrissur</span>
+      </div>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About Us</a></li>
+        <li><a href="index.html#academics" class="nav-link">Academics</a></li>
+        <li><a href="staff.html" class="nav-link">Our Staff</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="index.html#history" class="nav-link">History</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══ PAGE HERO ════════════════════════════════════════════════ -->
+  <section class="page-hero page-hero--gallery">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <p class="section-eyebrow">Our School Life</p>
+      <h1 class="page-hero__title">Photo <em>Gallery</em></h1>
+      <p class="page-hero__sub">Glimpses of the vibrant activities and events at Chaldean Syrian HSS.</p>
+    </div>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fa fa-chevron-right"></i>
+      <span>Gallery</span>
+    </nav>
+  </section>
+
+  <!-- ══ GALLERY SECTION ══════════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+
+      <!-- ── CATEGORY FILTER TABS ───────────────────────────────
+           To add a new category:
+             1. Add <button class="filter-btn" data-filter="your-cat">Label</button>
+             2. Add data-cat="your-cat" to the relevant .gallery-item divs
+      ─────────────────────────────────────────────────────────── -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Activities</button>
+        <button class="filter-btn" data-filter="sports">Sports</button>
+        <button class="filter-btn" data-filter="cultural">Cultural</button>
+        <button class="filter-btn" data-filter="academics">Academics</button>
+        <button class="filter-btn" data-filter="science">Science Day</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+      </div>
+
+      <!-- ── GALLERY GRID ───────────────────────────────────────
+           HOW TO ADD PHOTOS:
+             1. Copy a .gallery-item block below
+             2. Replace the .gallery-placeholder div with:
+                <img src="images/gallery/your-photo.jpg" alt="Description" />
+             3. Update data-cat to the right category
+             4. Update data-title (shown in lightbox caption)
+           
+           Recommended photo size: 800×600 px (landscape works best)
+      ─────────────────────────────────────────────────────────── -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- SPORTS ──────────────────────────────────────────────── -->
+        <div class="gallery-item reveal-up" data-cat="sports" data-title="Inter-School Football Tournament" data-delay="0">
+          <div class="gallery-placeholder" style="--gl-color:#2980b9; --gl-color2:#1a5276">
+            <i class="fa fa-futbol"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Football Tournament</span>
+            <span class="gallery-item__cat">Sports</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="sports" data-title="Annual Sports Day 2024" data-delay="80">
+          <div class="gallery-placeholder" style="--gl-color:#e67e22; --gl-color2:#d35400">
+            <i class="fa fa-running"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Annual Sports Day</span>
+            <span class="gallery-item__cat">Sports</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="sports" data-title="Basketball Championship" data-delay="160">
+          <div class="gallery-placeholder" style="--gl-color:#e74c3c; --gl-color2:#c0392b">
+            <i class="fa fa-basketball-ball"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Basketball Championship</span>
+            <span class="gallery-item__cat">Sports</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <!-- CULTURAL ─────────────────────────────────────────────── -->
+        <div class="gallery-item reveal-up gallery-item--wide" data-cat="cultural" data-title="Annual Day Celebration 2024" data-delay="0">
+          <div class="gallery-placeholder" style="--gl-color:#8e44ad; --gl-color2:#6c3483">
+            <i class="fa fa-music"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Annual Day Celebration</span>
+            <span class="gallery-item__cat">Cultural</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="cultural" data-title="Kerala Piravi Celebration" data-delay="80">
+          <div class="gallery-placeholder" style="--gl-color:#f39c12; --gl-color2:#e67e22">
+            <i class="fa fa-theater-masks"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Kerala Piravi</span>
+            <span class="gallery-item__cat">Cultural</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="cultural" data-title="Christmas Celebration" data-delay="160">
+          <div class="gallery-placeholder" style="--gl-color:#c9a84c; --gl-color2:#a08030">
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Christmas Celebration</span>
+            <span class="gallery-item__cat">Cultural</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="cultural" data-title="Dance Performance — Kalolsavam" data-delay="240">
+          <div class="gallery-placeholder" style="--gl-color:#e91e8c; --gl-color2:#c2185b">
+            <i class="fa fa-compact-disc"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Kalolsavam Dance</span>
+            <span class="gallery-item__cat">Cultural</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <!-- ACADEMICS ────────────────────────────────────────────── -->
+        <div class="gallery-item reveal-up" data-cat="academics" data-title="Board Exam Results Ceremony" data-delay="0">
+          <div class="gallery-placeholder" style="--gl-color:#27ae60; --gl-color2:#1e8449">
+            <i class="fa fa-graduation-cap"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Results Ceremony</span>
+            <span class="gallery-item__cat">Academics</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="academics" data-title="Quiz Competition — Thrissur District" data-delay="80">
+          <div class="gallery-placeholder" style="--gl-color:#1abc9c; --gl-color2:#148f77">
+            <i class="fa fa-question-circle"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Quiz Competition</span>
+            <span class="gallery-item__cat">Academics</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <!-- SCIENCE DAY ─────────────────────────────────────────── -->
+        <div class="gallery-item reveal-up gallery-item--wide" data-cat="science" data-title="National Science Day Expo 2024" data-delay="0">
+          <div class="gallery-placeholder" style="--gl-color:#2c3e50; --gl-color2:#1a252f">
+            <i class="fa fa-flask"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Science Day Expo</span>
+            <span class="gallery-item__cat">Science Day</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="science" data-title="Student Project Presentations" data-delay="80">
+          <div class="gallery-placeholder" style="--gl-color:#16a085; --gl-color2:#0e6655">
+            <i class="fa fa-microscope"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Project Presentations</span>
+            <span class="gallery-item__cat">Science Day</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <!-- COMMUNITY ───────────────────────────────────────────── -->
+        <div class="gallery-item reveal-up" data-cat="community" data-title="Clean Campus Drive" data-delay="0">
+          <div class="gallery-placeholder" style="--gl-color:#7a1c2e; --gl-color2:#5a1020">
+            <i class="fa fa-hands-helping"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Clean Campus Drive</span>
+            <span class="gallery-item__cat">Community</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-cat="community" data-title="Blood Donation Camp" data-delay="80">
+          <div class="gallery-placeholder" style="--gl-color:#c0392b; --gl-color2:#922b21">
+            <i class="fa fa-heart"></i>
+          </div>
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__title">Blood Donation Camp</span>
+            <span class="gallery-item__cat">Community</span>
+            <i class="fa fa-expand-alt gallery-item__zoom"></i>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+    </div>
+  </section>
+
+  <!-- ══ LIGHTBOX OVERLAY ══════════════════════════════════════════
+       Lightbox is shown when a gallery item is clicked.
+       The JS (gallery.js) populates the image/title dynamically.
+       To style the lightbox differently, edit .lightbox in gallery.css
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">
+      <i class="fa fa-times"></i>
+    </button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Previous image">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+    <div class="lightbox__inner">
+      <!-- The placeholder shown when no real image is available -->
+      <div class="lightbox__placeholder" id="lightboxPlaceholder">
+        <i class="fa fa-image"></i>
+        <p>Add your photo here:<br/><code>images/gallery/your-photo.jpg</code></p>
+      </div>
+      <!-- Real image is injected here by gallery.js -->
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox__caption" id="lightboxCaption"></div>
+    </div>
+    <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext" aria-label="Next image">
+      <i class="fa fa-chevron-right"></i>
+    </button>
+  </div>
+  <!-- Dark backdrop -->
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name">Chaldean Syrian HSS</p>
+        <p class="footer__loc">Thrissur, Kerala, India</p>
+        <p class="footer__copy">Est. 1927 · All rights reserved © <span class="footerYear"></span></p>
+      </div>
+      <div class="footer__links">
+        <p class="footer__heading">Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="staff.html">Our Staff</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <p class="footer__heading">Follow Us</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Designed with ❤️ for Chaldean Syrian HSS, Thrissur</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

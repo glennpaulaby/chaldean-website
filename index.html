@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaldean Syrian HSS – Thrissur</title>
+
+  <!-- ─── FONTS ─────────────────────────────────────────────────── -->
+  <!-- Playfair Display: elegant serif for headings -->
+  <!-- Lato: clean sans-serif for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- ─── ICONS ─────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ─── MAIN STYLESHEET ───────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       TOPBAR  – thin strip above the navbar
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span><i class="fa fa-map-marker-alt"></i> Thrissur, Kerala, India</span>
+      <span><i class="fa fa-phone"></i> +91 9447617867</span>
+      <span><i class="fa fa-envelope"></i> info@chaldeansyrianhss.edu.in</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVBAR  – sticky on scroll, logo + nav links
+  ════════════════════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__logo">
+      <!-- Replace the SVG crest below with your actual logo image:
+           <img src="images/logo.png" alt="School Logo" /> -->
+      <div class="logo-crest">
+        <img src="images/logo.png" alt="School Logo" />
+      </div>
+      <div class="logo-text">
+        <span class="logo-text__main">Chaldean Syrian HSS</span>
+        <span class="logo-text__sub"> Thrissur</span>
+      </div>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__nav" id="mainNav">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#academics" class="nav-link">Academics</a></li>
+        <li><a href="staff.html" class="nav-link">Our Staff</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="#history" class="nav-link">History</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO SLIDER  – full-width image carousel with captions
+       HOW TO ADD IMAGES: Replace the gradient divs (.slide__bg)
+       with: <img src="images/hero1.jpg" alt="..." />
+       Recommended image size: 1920 × 900 px
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="slider" id="slider">
+
+      <!-- SLIDE 1 ─────────────────────────────────────────────── -->
+      <div class="slide active">
+  <video autoplay muted loop playsinline class="slide__bg">
+    <source src="images/Chaldean-20-year.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="slide__overlay"></div>
+  <div class="slide__caption">
+    <p class="slide__tagline">Est. 1927</p>
+    <h1 class="slide__title">Chaldean Syrian<br/><em>Higher Secondary School</em></h1>
+    <p class="slide__sub">Rooted in heritage · Rising with excellence</p>
+    <a href="#about" class="btn btn--gold">Discover Our Story</a>
+  </div>
+</div>
+
+      <!-- SLIDE 2 ─────────────────────────────────────────────── -->
+      <div class="slide">
+  <div class="slide__bg" style="background-image: url('images/Cosine Award 2018 CNR Rao 3.jpg');"></div>
+  <div class="slide__overlay"></div>
+  <div class="slide__caption">
+    <p class="slide__tagline">Academic Excellence</p>
+    <h1 class="slide__title">Inspiring the<br/><em>Leaders of Tomorrow</em></h1>
+    <p class="slide__sub">Interacting with visionaries to spark innovation and growth.</p>
+    <a href="#academics" class="btn btn--gold">Learn More</a>
+  </div>
+</div>
+
+      <!-- SLIDE 3 ─────────────────────────────────────────────── -->
+      <div class="slide">
+  <div class="slide__bg" style="background-image: url('images/Cosine 2017 E Sreedharan 11.jpg');"></div>
+  <div class="slide__overlay"></div>
+  <div class="slide__caption">
+    <p class="slide__tagline">Our Community</p>
+    <h1 class="slide__title">Faith, Knowledge<br/><em>&amp; Character</em></h1>
+    <p class="slide__sub">Nurturing a vibrant environment for holistic development.</p>
+    <a href="#contact" class="btn btn--gold">Join Our Journey</a>
+  </div>
+</div>
+
+    </div><!-- /slider -->
+
+    <!-- Slider Controls -->
+    <button class="slider__arrow slider__arrow--prev" id="slidePrev" aria-label="Previous slide">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+    <button class="slider__arrow slider__arrow--next" id="slideNext" aria-label="Next slide">
+      <i class="fa fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="slider__dots" id="sliderDots">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       QUICK LINKS  – icon buttons (like Don Bosco site)
+       To add/remove a link: copy or delete one .ql-item block
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="quicklinks" id="quicklinks">
+    <div class="container">
+      <div class="ql-grid">
+<!-- Quick link → Staff login -->
+        <a href="#" class="ql-item" data-delay="0">
+          <div class="ql-icon ql-icon--red">
+            <i class="fa fa-user-tie"></i>
+          </div>
+          <span>Staff Login</span>
+        </a>
+
+        <a href="#" class="ql-item" data-delay="100">
+          <div class="ql-icon ql-icon--green">
+            <i class="fa fa-users"></i>
+          </div>
+          <span>Parents Login</span>
+        </a>
+
+        <a href="#" class="ql-item" data-delay="200">
+          <div class="ql-icon ql-icon--blue">
+            <i class="fa fa-file-alt"></i>
+          </div>
+          <span>Admission</span>
+        </a>
+
+        <a href="#" class="ql-item" data-delay="300">
+          <div class="ql-icon ql-icon--orange">
+            <i class="fa fa-trophy"></i>
+          </div>
+          <span>Results</span>
+        </a>
+
+        <a href="#" class="ql-item" data-delay="400">
+          <div class="ql-icon ql-icon--teal">
+            <i class="fa fa-calendar-alt"></i>
+          </div>
+          <span>Exam Timetable</span>
+        </a>
+
+        <a href="#" class="ql-item" data-delay="500">
+          <div class="ql-icon ql-icon--maroon">
+            <i class="fa fa-book-open"></i>
+          </div>
+          <span>E-Library</span>
+        </a>
+
+        <!-- Quick link → Staff page -->
+        <a href="staff.html" class="ql-item" data-delay="600">
+          <div class="ql-icon ql-icon--purple">
+            <i class="fa fa-chalkboard-teacher"></i>
+          </div>
+          <span>Our Staff</span>
+        </a>
+
+        <!-- Quick link → Gallery page -->
+        <a href="gallery.html" class="ql-item" data-delay="700">
+          <div class="ql-icon ql-icon--pink">
+            <i class="fa fa-images"></i>
+          </div>
+          <span>Gallery</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ABOUT SECTION  – principal message + school overview
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+
+      <!-- Left: Principal photo & card -->
+      <div class="about__principal reveal-left">
+        <!-- Replace with actual principal photo:
+             <img src="images/principal.jpg" alt="Dr. Aby Paul" /> -->
+        <div class="principal-photo">
+          <div class="principal-photo__placeholder">
+            <img src="images/principal.jpg" alt="Dr. Aby Paul" />
+          </div>
+          <!--<div class="principal-photo__badge">
+            <span>Principal</span>
+          </div>-->
+        </div>
+        <div class="principal-card">
+          <h3>Dr. Aby Paul</h3>
+          <p class="principal-card__title">Principal, Chaldean Syrian HSS</p>
+          <p class="principal-card__quote">
+            "We nurture not just students, but thinkers, leaders, and responsible citizens of tomorrow."
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: About text -->
+      <div class="about__text reveal-right">
+        <p class="section-eyebrow">About Us</p>
+        <h2 class="section-heading">A Legacy of<br/><em>Learning Since 1927</em></h2>
+        <p>
+          Chaldean Syrian Higher Secondary School, Thrissur, stands as one of Kerala's most
+          respected English-medium institutions. Founded in 1927 under the visionary leadership
+          of Mar Abimalek Timotheus Metropolitan, the school has been shaping young minds for
+          nearly a century.
+        </p>
+        <p>
+          Following the NCERT curriculum, we offer two distinct streams — Science and Commerce —
+          designed to prepare students for the challenges and opportunities of the modern world,
+          while staying firmly grounded in the values of faith, integrity, and excellence.
+        </p>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num">1927</span>
+            <span class="stat__label">Established</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">95+</span>
+            <span class="stat__label">Years of Excellence</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">2</span>
+            <span class="stat__label">Streams Offered</span>
+          </div>
+        </div>
+        <a href="#history" class="btn btn--outline">Read Full History</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       ACADEMICS SECTION  – Science & Commerce streams
+       To add a new subject: add a <li> inside the relevant <ul>
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="academics" id="academics">
+    <div class="container">
+      <p class="section-eyebrow text-center">What We Offer</p>
+      <h2 class="section-heading text-center">Academic <em>Streams</em></h2>
+      <p class="section-intro">
+        We follow the National Council of Educational Research and Training (NCERT) syllabus
+        strictly across all subjects, ensuring students receive a nationally benchmarked education.
+      </p>
+
+      <div class="stream-grid">
+
+        <!-- SCIENCE STREAM -->
+        <div class="stream-card reveal-up" data-delay="0">
+          <div class="stream-card__icon">
+            <i class="fa fa-flask"></i>
+          </div>
+          <h3>Science Stream</h3>
+          <p>Designed to build analytical thinking and prepare students for engineering, medicine, and research careers.</p>
+          <ul class="stream-card__subjects">
+            <li><i class="fa fa-atom"></i> Physics</li>
+            <li><i class="fa fa-vial"></i> Chemistry</li>
+            <li><i class="fa fa-dna"></i> Biology</li>
+            <li><i class="fa fa-calculator"></i> Mathematics</li>
+            <li><i class="fa fa-laptop-code"></i> Computer Science</li>
+            <li><i class="fa fa-language"></i> Malayalam / Hindi</li>
+          </ul>
+        </div>
+
+        <!-- COMMERCE STREAM -->
+        <div class="stream-card reveal-up" data-delay="150">
+          <div class="stream-card__icon stream-card__icon--gold">
+            <i class="fa fa-chart-line"></i>
+          </div>
+          <h3>Commerce Stream</h3>
+          <p>Built to foster business acumen and economic understanding, opening doors to finance, management, and law.</p>
+          <ul class="stream-card__subjects">
+            <li><i class="fa fa-book"></i> Accountancy</li>
+            <li><i class="fa fa-briefcase"></i> Business Studies</li>
+            <li><i class="fa fa-coins"></i> Economics</li>
+            <li><i class="fa fa-calculator"></i> Mathematics</li>
+            <li><i class="fa fa-language"></i> Malayalam / Hindi</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- NCERT Badge -->
+      <div class="ncert-badge reveal-up">
+        <i class="fa fa-award"></i>
+        <p>All subjects strictly follow the <strong>NCERT Syllabus</strong> — nationally recognised &amp; standardised curriculum.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HISTORY SECTION  – timeline of key milestones
+       To add a milestone: copy a .timeline__item block and update
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="history" id="history">
+    <div class="container">
+      <p class="section-eyebrow text-center">Our Roots</p>
+      <h2 class="section-heading text-center">A Walk Through <em>History</em></h2>
+
+      <div class="timeline">
+
+        <div class="timeline__item reveal-left" data-delay="0">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__year">1908</span>
+            <h4>Arrival &amp; First School</h4>
+            <p>Mar Abimalek Timotheus Metropolitan arrives in India and establishes his first school in the Parish of Mar Thoma Shleeha Church, Pattikad — later handed to the government.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal-right" data-delay="150">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__year">1925</span>
+            <h4>Community Resolution</h4>
+            <p>Litigation within the community concludes in April 1925, paving the way for the Metropolitan to establish five new schools.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal-left" data-delay="300">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__year">1927</span>
+            <h4>Foundation of Chaldean Syrian School</h4>
+            <p>Chaldean Syrian School is established in Thrissur as one of the five schools founded by Mar Abimalek Timotheus Metropolitan — beginning a century of academic excellence.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal-right" data-delay="450">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__year">Today</span>
+            <h4>Higher Secondary &amp; Beyond</h4>
+            <p>Now a prestigious Higher Secondary School, led by Principal Dr. Aby Paul, offering Science and Commerce streams to students from across Thrissur and beyond.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CONTACT SECTION
+       Update the address, phone and email fields below
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container contact__grid">
+
+      <div class="contact__info reveal-left">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-heading">Contact <em>Us</em></h2>
+        <ul class="contact__list">
+          <li>
+            <i class="fa fa-map-marker-alt"></i>
+            <div>
+              <strong>Address</strong>
+              <span>Chaldean Syrian HSS, Thrissur, Kerala – 680001, India</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <span>+91-XXXX-XXXXXX</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <span>info@chaldeansyrianhss.edu.in</span>
+            </div>
+          </li>
+          <li>
+            <i class="fa fa-clock"></i>
+            <div>
+              <strong>Office Hours</strong>
+              <span>Monday – Saturday, 9 AM – 4 PM</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact__form reveal-right">
+        <h3>Send a Message</h3>
+        <!-- NOTE: This form submits to nowhere by default.
+             To enable it, connect a backend or use a service like
+             Formspree (https://formspree.io): set action="https://formspree.io/f/YOUR_ID"
+        -->
+        <div class="form-group">
+          <input type="text" id="fname" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" id="femail" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="text" id="fsubject" placeholder="Subject" />
+        </div>
+        <div class="form-group">
+          <textarea id="fmessage" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button class="btn btn--gold btn--full" id="formSubmit" onclick="handleFormSubmit(event)">
+          Send Message <i class="fa fa-paper-plane"></i>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name">Chaldean Syrian HSS</p>
+        <p class="footer__loc">Thrissur, Kerala, India</p>
+        <p class="footer__copy">Est. 1927 · All rights reserved © <span id="footerYear"></span></p>
+      </div>
+      <div class="footer__links">
+        <p class="footer__heading">Quick Links</p>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <p class="footer__heading">Follow Us</p>
+        <!-- Replace # with actual social media URLs -->
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Designed with ❤️ for Chaldean Syrian HSS, Thrissur</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <!-- ─── MAIN SCRIPT ────────────────────────────────────────── -->
+  <script src="js/main.js"></script>
+</body>
+</html>

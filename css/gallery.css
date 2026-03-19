@@ -1,0 +1,356 @@
+/* ═══════════════════════════════════════════════════════════════
+   gallery.css — Styles specific to gallery.html
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── PAGE HERO (gallery variant) ─────────────────────────────── */
+/* Reuses .page-hero from staff.css — add that file or inline here */
+.page-hero {
+  position: relative;
+  height: 340px;
+  background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 60%, var(--maroon-light) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+}
+.page-hero__content { position: relative; z-index: 2; }
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.page-hero__title em { color: var(--gold); font-style: italic; }
+.page-hero__sub { font-size: 1rem; color: rgba(255,255,255,0.8); }
+.breadcrumb {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  z-index: 2;
+  white-space: nowrap;
+}
+.breadcrumb a { color: var(--gold); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--gold-light); }
+.breadcrumb i { font-size: 0.6rem; }
+.breadcrumb span { color: rgba(255,255,255,0.8); }
+
+/* ── GALLERY SECTION ──────────────────────────────────────────── */
+.gallery-section {
+  padding: 80px 0 100px;
+  background: var(--white);
+}
+
+/* Filter bar reused from staff page */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.filter-btn {
+  background: var(--light-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-label);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.2s;
+}
+.filter-btn:hover { transform: translateY(-2px); }
+.filter-btn.active {
+  background: var(--maroon);
+  color: var(--white);
+  border-color: var(--maroon);
+}
+
+/* ── GALLERY GRID ─────────────────────────────────────────────── */
+/* CSS Grid with auto-placement — no JS masonry library needed.
+   Some items span 2 columns via .gallery-item--wide */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  grid-auto-rows: 220px;
+}
+
+/* ── GALLERY ITEM ─────────────────────────────────────────────── */
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  /* Reveal animation starting state */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow var(--transition);
+}
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gallery-item:hover {
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+/* Wide items span 2 columns for visual variety */
+.gallery-item--wide {
+  grid-column: span 2;
+}
+
+/* Hidden when filtered out */
+.gallery-item.hidden {
+  display: none;
+}
+
+/* Placeholder coloured background (until real photos are added) */
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gl-color, #7a1c2e) 0%, var(--gl-color2, #5a1020) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: rgba(255,255,255,0.15);
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover .gallery-placeholder {
+  transform: scale(1.06);
+}
+
+/* When using a real image:
+   .gallery-item img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     transition: transform 0.5s ease;
+   }
+   .gallery-item:hover img { transform: scale(1.06); }
+*/
+
+/* Overlay shown on hover */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px 18px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery-item:hover .gallery-item__overlay { opacity: 1; }
+
+.gallery-item__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+  margin-bottom: 4px;
+}
+.gallery-item__cat {
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+}
+.gallery-item__zoom {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  transition: color var(--transition), transform var(--transition);
+}
+.gallery-item:hover .gallery-item__zoom {
+  color: var(--gold);
+  transform: scale(1.2);
+}
+
+/* ── LIGHTBOX ─────────────────────────────────────────────────── */
+/* Dark backdrop behind the lightbox */
+.lightbox__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  backdrop-filter: blur(8px);
+}
+.lightbox__backdrop.active { opacity: 1; pointer-events: auto; }
+
+/* Lightbox container */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.lightbox.active { opacity: 1; pointer-events: auto; }
+
+/* Image wrapper */
+.lightbox__inner {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+  text-align: center;
+  animation: lightboxIn 0.4s ease forwards;
+}
+@keyframes lightboxIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Placeholder shown when no real image exists */
+.lightbox__placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: rgba(255,255,255,0.05);
+  border: 2px dashed rgba(201,168,76,0.4);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.4);
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+.lightbox__placeholder p {
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  text-align: center;
+  line-height: 1.6;
+}
+.lightbox__placeholder code {
+  font-size: 0.8rem;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.lightbox__placeholder.hidden { display: none; }
+
+/* Real image */
+.lightbox__img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  object-fit: contain;
+  display: none; /* shown by JS when src is set */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox__img.visible { display: block; }
+
+/* Caption */
+.lightbox__caption {
+  margin-top: 16px;
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+/* Close button */
+.lightbox__close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), color var(--transition);
+  z-index: 2002;
+}
+.lightbox__close:hover { background: var(--maroon); border-color: var(--maroon); }
+
+/* Navigation arrows */
+.lightbox__arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; height: 50px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+  z-index: 2002;
+}
+.lightbox__arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lightbox__arrow--prev { left: 20px; }
+.lightbox__arrow--next { right: 20px; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+  }
+  .gallery-item--wide { grid-column: span 2; }
+  .lightbox__arrow--prev { left: 8px; }
+  .lightbox__arrow--next { right: 8px; }
+  .page-hero { height: 280px; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+  .gallery-item--wide { grid-column: span 1; }
+}

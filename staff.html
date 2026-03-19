@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Staff – Chaldean Syrian HSS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Shared styles from main site -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Staff-specific styles -->
+  <link rel="stylesheet" href="css/staff.css" />
+</head>
+<body>
+
+  <!-- ══ TOPBAR (same as main site) ══════════════════════════════ -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span><i class="fa fa-map-marker-alt"></i> Thrissur, Kerala, India</span>
+      <span><i class="fa fa-phone"></i> +91-XXXX-XXXXXX</span>
+      <span><i class="fa fa-envelope"></i> info@chaldeansyrianhss.edu.in</span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+<header class="navbar" id="navbar">
+    <div class="navbar__logo">
+      <!-- Replace the SVG crest below with your actual logo image:
+           <img src="images/logo.png" alt="School Logo" /> -->
+      <div class="logo-crest">
+        <img src="images/logo.png" alt="School Logo" />
+      </div>
+      <div class="logo-text">
+        <span class="logo-text__main">Chaldean Syrian HSS</span>
+        <span class="logo-text__sub"> Thrissur</span>
+      </div>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+
+    <nav class="navbar__nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About Us</a></li>
+        <li><a href="index.html#academics" class="nav-link">Academics</a></li>
+        <li><a href="staff.html" class="nav-link active">Our Staff</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="index.html#history" class="nav-link">History</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══ PAGE HERO BANNER ════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <p class="section-eyebrow">Meet The Team</p>
+      <h1 class="page-hero__title">Our <em>Staff</em></h1>
+      <p class="page-hero__sub">Dedicated educators shaping the future, one student at a time.</p>
+    </div>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fa fa-chevron-right"></i>
+      <span>Our Staff</span>
+    </nav>
+  </section>
+
+  <!-- ══ PRINCIPAL SPOTLIGHT ═════════════════════════════════════ -->
+  <section class="principal-spotlight">
+    <div class="container">
+      <div class="spotlight-card reveal-up">
+        <!-- Replace with: <img src="images/principal.jpg" alt="Dr. Aby Paul" class="spotlight-card__img" /> -->
+        <div class="spotlight-card__img-placeholder">
+          <img src="images/principal.jpg" alt="Dr. Aby Paul" class="spotlight-card__img" />
+        </div>
+        <div class="spotlight-card__body">
+          <p class="section-eyebrow">School Leadership</p>
+          <h2 class="spotlight-card__name">Dr. Aby Paul</h2>
+          <p class="spotlight-card__role">
+            <i class="fa fa-star"></i> Principal, Chaldean Syrian HSS
+          </p>
+          <p class="spotlight-card__bio">
+            Dr. Aby Paul leads Chaldean Syrian Higher Secondary School with a commitment
+            to academic excellence and holistic student development. Under his leadership,
+            the school continues to uphold the century-old tradition of quality education
+            rooted in values and discipline.
+          </p>
+          <p class="spotlight-card__quote">
+            "Education is not the filling of a pail, but the lighting of a fire."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STAFF FILTER TABS ════════════════════════════════════════
+       To add a new department tab:
+         1. Add a <button class="filter-btn" data-filter="dept-name">Department</button>
+         2. Add data-dept="dept-name" to the relevant .staff-card elements
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="staff-section">
+    <div class="container">
+      <p class="section-eyebrow text-center">Faculty</p>
+      <h2 class="section-heading text-center">Our <em>Teaching Staff</em></h2>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Staff</button>
+        <button class="filter-btn" data-filter="science">Science</button>
+        <button class="filter-btn" data-filter="commerce">Commerce</button>
+        <button class="filter-btn" data-filter="language">Languages</button>
+        <button class="filter-btn" data-filter="admin">Administration</button>
+      </div>
+
+      <!-- ── STAFF GRID ──────────────────────────────────────────
+           HOW TO ADD A TEACHER:
+             1. Copy one .staff-card block below
+             2. Update: name, role, subject, department (data-dept)
+             3. Replace the placeholder <div> with:
+                <img src="images/staff/teacher-name.jpg" alt="Name" />
+             4. Optionally add email and a short bio
+      ─────────────────────────────────────────────────────────── -->
+      <div class="staff-grid" id="staffGrid">
+
+        <!-- ── SCIENCE DEPARTMENT ──────────────────────────────── -->
+
+        <div class="staff-card reveal-up" data-dept="science" data-delay="0">
+          <div class="staff-card__photo">
+            <!-- Replace div below with: <img src="images/staff/physics-teacher.jpg" alt="Teacher Name" /> -->
+            <div class="staff-photo-placeholder" style="--ph-color:#2980b9">
+              <img src="images/staff/teacher.jpg" alt="Teacher Name" class="spotlight-card__img" />
+            </div>
+            <div class="staff-card__subject-badge badge--blue">Physics</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mr. [Teacher Name]</h3>
+            <p class="staff-card__role">Physics Teacher · Science Dept.</p>
+            <p class="staff-card__bio">M.Sc Physics · B.Ed · 12 years of experience</p>
+            <a href="mailto:physics@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> physics@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="science" data-delay="100">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#27ae60">
+              <img src="images/staff/teacher.jpg" alt="Teacher Name" />
+            </div>
+            <div class="staff-card__subject-badge badge--green">Chemistry</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mrs. [Teacher Name]</h3>
+            <p class="staff-card__role">Chemistry Teacher · Science Dept.</p>
+            <p class="staff-card__bio">M.Sc Chemistry · B.Ed · 9 years of experience</p>
+            <a href="mailto:chemistry@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> chemistry@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="science" data-delay="200">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#8e44ad">
+              <i class="fa fa-dna"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--purple">Biology</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mrs. [Teacher Name]</h3>
+            <p class="staff-card__role">Biology Teacher · Science Dept.</p>
+            <p class="staff-card__bio">M.Sc Botany · B.Ed · 15 years of experience</p>
+            <a href="mailto:biology@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> biology@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="science" data-delay="300">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#e67e22">
+              <i class="fa fa-calculator"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--orange">Mathematics</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mr. [Teacher Name]</h3>
+            <p class="staff-card__role">Mathematics Teacher · Science Dept.</p>
+            <p class="staff-card__bio">M.Sc Mathematics · B.Ed · 11 years of experience</p>
+            <a href="mailto:maths@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> maths@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="science" data-delay="400">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#16a085">
+              <i class="fa fa-laptop-code"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--teal">Computer Science</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mr. [Teacher Name]</h3>
+            <p class="staff-card__role">Computer Science Teacher · Science Dept.</p>
+            <p class="staff-card__bio">MCA / M.Sc CS · B.Ed · 8 years of experience</p>
+            <a href="mailto:cs@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> cs@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <!-- ── COMMERCE DEPARTMENT ─────────────────────────────── -->
+
+        <div class="staff-card reveal-up" data-dept="commerce" data-delay="0">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#c9a84c">
+              <i class="fa fa-book"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--gold">Accountancy</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mrs. [Teacher Name]</h3>
+            <p class="staff-card__role">Accountancy Teacher · Commerce Dept.</p>
+            <p class="staff-card__bio">M.Com · B.Ed · 14 years of experience</p>
+            <a href="mailto:accounts@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> accounts@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="commerce" data-delay="100">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#7a1c2e">
+              <i class="fa fa-briefcase"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--maroon">Business Studies</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mr. [Teacher Name]</h3>
+            <p class="staff-card__role">Business Studies Teacher · Commerce Dept.</p>
+            <p class="staff-card__bio">MBA · B.Ed · 10 years of experience</p>
+            <a href="mailto:business@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> business@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="commerce" data-delay="200">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#2c3e50">
+              <i class="fa fa-coins"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--dark">Economics</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mrs. [Teacher Name]</h3>
+            <p class="staff-card__role">Economics Teacher · Commerce Dept.</p>
+            <p class="staff-card__bio">M.A Economics · B.Ed · 7 years of experience</p>
+            <a href="mailto:economics@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> economics@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <!-- ── LANGUAGE DEPARTMENT ─────────────────────────────── -->
+
+        <div class="staff-card reveal-up" data-dept="language" data-delay="0">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#e74c3c">
+              <i class="fa fa-language"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--red">Malayalam</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mrs. [Teacher Name]</h3>
+            <p class="staff-card__role">Malayalam Teacher · Language Dept.</p>
+            <p class="staff-card__bio">M.A Malayalam · B.Ed · 18 years of experience</p>
+            <a href="mailto:malayalam@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> malayalam@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="language" data-delay="100">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#f39c12">
+              <i class="fa fa-language"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--orange">Hindi</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>Mr. [Teacher Name]</h3>
+            <p class="staff-card__role">Hindi Teacher · Language Dept.</p>
+            <p class="staff-card__bio">M.A Hindi · B.Ed · 13 years of experience</p>
+            <a href="mailto:hindi@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> hindi@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <!-- ── ADMINISTRATION ──────────────────────────────────── -->
+
+        <div class="staff-card reveal-up" data-dept="admin" data-delay="0">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#555">
+              <i class="fa fa-user-tie"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--dark">Office</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>[Office Staff Name]</h3>
+            <p class="staff-card__role">Head Clerk · Administration</p>
+            <p class="staff-card__bio">Manages admissions, records and school administration.</p>
+            <a href="mailto:office@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> office@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+        <div class="staff-card reveal-up" data-dept="admin" data-delay="100">
+          <div class="staff-card__photo">
+            <div class="staff-photo-placeholder" style="--ph-color:#555">
+              <i class="fa fa-book-open"></i>
+            </div>
+            <div class="staff-card__subject-badge badge--dark">Library</div>
+          </div>
+          <div class="staff-card__body">
+            <h3>[Librarian Name]</h3>
+            <p class="staff-card__role">Librarian · Administration</p>
+            <p class="staff-card__bio">M.L.I.Sc · Manages the school library and digital resources.</p>
+            <a href="mailto:library@chaldeansyrianhss.edu.in" class="staff-card__email">
+              <i class="fa fa-envelope"></i> library@chaldeansyrianhss.edu.in
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /staff-grid -->
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name">Chaldean Syrian HSS</p>
+        <p class="footer__loc">Thrissur, Kerala, India</p>
+        <p class="footer__copy">Est. 1927 · All rights reserved © <span class="footerYear"></span></p>
+      </div>
+      <div class="footer__links">
+        <p class="footer__heading">Quick Links</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#academics">Academics</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <p class="footer__heading">Follow Us</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>Designed with ❤️ for Chaldean Syrian HSS, Thrissur</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/staff.js"></script>
+</body>
+</html>

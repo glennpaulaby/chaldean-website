@@ -1,0 +1,304 @@
+/* ═══════════════════════════════════════════════════════════════
+   staff.css  — Styles specific to staff.html
+   All shared variables (colours, fonts, etc.) come from styles.css
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── PAGE HERO BANNER ─────────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  height: 340px;
+  background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 60%, var(--maroon-light) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* Decorative pattern overlay */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.page-hero__content { position: relative; z-index: 2; }
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.page-hero__title em { color: var(--gold); font-style: italic; }
+.page-hero__sub { font-size: 1rem; color: rgba(255,255,255,0.8); }
+
+/* Breadcrumb */
+.breadcrumb {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  z-index: 2;
+  white-space: nowrap;
+}
+.breadcrumb a { color: var(--gold); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--gold-light); }
+.breadcrumb i { font-size: 0.6rem; }
+.breadcrumb span { color: rgba(255,255,255,0.8); }
+
+/* ── PRINCIPAL SPOTLIGHT ──────────────────────────────────────── */
+.principal-spotlight {
+  padding: 72px 0;
+  background: var(--cream);
+}
+
+.spotlight-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px 48px;
+  box-shadow: var(--shadow-lg);
+  border-left: 6px solid var(--gold);
+}
+
+.spotlight-card__img-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: rgba(255,255,255,0.4);
+  border: 5px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(122,28,46,0.25);
+  margin-inline: auto;
+}
+
+/* When using a real image, this class styles it: */
+.spotlight-card__img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(122,28,46,0.25);
+  margin-inline: auto;
+}
+
+.spotlight-card__name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--maroon);
+  margin-bottom: 6px;
+}
+.spotlight-card__role {
+  color: var(--gold);
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.spotlight-card__role i { margin-right: 6px; }
+
+.spotlight-card__bio {
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.spotlight-card__quote {
+  font-style: italic;
+  color: var(--text-muted);
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+  font-size: 0.95rem;
+}
+
+/* ── STAFF SECTION ────────────────────────────────────────────── */
+.staff-section {
+  padding: 80px 0 100px;
+  background: var(--white);
+}
+
+/* ── FILTER BAR ───────────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  background: var(--light-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-label);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.2s;
+}
+.filter-btn:hover { transform: translateY(-2px); }
+.filter-btn.active {
+  background: var(--maroon);
+  color: var(--white);
+  border-color: var(--maroon);
+}
+
+/* ── STAFF GRID ───────────────────────────────────────────────── */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+/* ── STAFF CARD ───────────────────────────────────────────────── */
+.staff-card {
+  background: var(--cream);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition), opacity 0.4s ease;
+}
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hidden state when filtered out */
+.staff-card.hidden {
+  display: none;
+}
+
+/* Photo area */
+.staff-card__photo {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* Placeholder coloured background (until real photo is added) */
+.staff-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--ph-color, #7a1c2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: rgba(255,255,255,0.25);
+  transition: transform var(--transition);
+}
+.staff-card:hover .staff-photo-placeholder { transform: scale(1.05); }
+
+/* When using a real image:
+   .staff-card__photo img {
+     width: 100%; height: 100%; object-fit: cover;
+     transition: transform var(--transition);
+   }
+   .staff-card:hover .staff-card__photo img { transform: scale(1.06); }
+*/
+
+/* Subject badge pill on photo */
+.staff-card__subject-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Badge colour variants */
+.badge--blue   { background: #2980b9; }
+.badge--green  { background: #27ae60; }
+.badge--purple { background: #8e44ad; }
+.badge--orange { background: #e67e22; }
+.badge--teal   { background: #16a085; }
+.badge--gold   { background: #c9a84c; color: #1a1a1a; }
+.badge--maroon { background: #7a1c2e; }
+.badge--red    { background: #e74c3c; }
+.badge--dark   { background: #2c3e50; }
+
+/* Card body */
+.staff-card__body {
+  padding: 20px 22px;
+}
+.staff-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--maroon);
+  margin-bottom: 4px;
+}
+.staff-card__role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-label);
+}
+.staff-card__bio {
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.staff-card__email {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--maroon);
+  word-break: break-all;
+  transition: color var(--transition);
+}
+.staff-card__email:hover { color: var(--gold); }
+.staff-card__email i { flex-shrink: 0; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .spotlight-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 28px;
+  }
+  .spotlight-card__quote { text-align: left; }
+  .staff-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .page-hero { height: 280px; }
+}
