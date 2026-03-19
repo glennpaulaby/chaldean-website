@@ -2,6 +2,7 @@
 
 A complete, single-page school website for **Chaldean Syrian Higher Secondary School, Thrissur**.
 
+Access the website [here](https://glennpaulaby.github.io/chaldean-website/)
 ---
 
 ## 📁 File Structure
